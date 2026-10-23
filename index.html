@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Between Us | A Card Game for Two</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- HOME SCREEN -->
+        <section id="home-screen">
+
+            <div class="game-header">
+
+                <p class="subtitle">A CARD GAME FOR TWO</p>
+
+                <h1>Between Us</h1>
+
+                <p class="description">
+                    <span>A little curiosity.</span>
+                    <span>A little courage.</span>
+                    <span>A lot to discover.</span>
+                </p>
+
+            </div>
+
+            <div class="game-menu" id="main-menu">
+
+                <button id="start-button" type="button">
+                    Let's Play
+                </button>
+
+                <button id="rules-button" type="button">
+                    How to Play
+                </button>
+
+            </div>
+
+            <p class="footer">No right answers. Just us.</p>
+
+        </section>
+
+
+        <!-- LEVEL SELECTION -->
+        <section id="level-selection" class="hidden">
+
+            <h2>Choose Your Depth</h2>
+
+            <p class="section-description">
+                Every conversation starts somewhere.
+            </p>
+
+            <div class="level-buttons">
+
+                <button class="level-button" data-level="1" type="button">
+                    01 · The Spark
+                </button>
+
+                <button class="level-button" data-level="2" type="button">
+                    02 · Beneath the Surface
+                </button>
+
+                <button class="level-button" data-level="3" type="button">
+                    03 · The Chemistry
+                </button>
+
+                <button class="level-button" data-level="4" type="button">
+                    04 · Between Us
+                </button>
+
+                <button class="level-button surprise" data-level="all" type="button">
+                    ✦ Surprise Me
+                </button>
+
+            </div>
+
+            <button id="back-button" type="button">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <!-- RULES -->
+        <section id="rules-section" class="hidden">
+
+            <h2>How to Play</h2>
+
+            <div class="rules-text">
+
+                <p>1. Choose a level and draw a card.</p>
+                <p>2. Take turns answering each question.</p>
+                <p>3. Listen with curiosity, not judgment.</p>
+                <p>4. You can always pass. No explanation needed.</p>
+                <p>5. Change levels whenever you want.</p>
+                <p>6. No right answers. No pressure. Just us.</p>
+
+            </div>
+
+            <button id="rules-back-button" type="button">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <!-- GAME SCREEN -->
+        <section id="game-section" class="hidden">
+
+            <p class="card-level" id="current-level"></p>
+
+            <div
+                class="card"
+                id="question-card"
+                role="button"
+                tabindex="0"
+                aria-label="Reveal question"
+            >
+
+                <div class="card-inner">
+
+                    <!-- CARD FRONT -->
+                    <div class="card-face card-front">
+
+                        <h2>Between Us</h2>
+
+                        <p>TAP TO REVEAL</p>
+
+                    </div>
+
+                    <!-- CARD BACK -->
+                    <div class="card-face card-back">
+
+                        <p class="card-category" id="card-category"></p>
+
+                        <h2 id="question-text"></h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button id="next-card-button" type="button">
+                Next Card →
+            </button>
+
+            <button id="special-card-button" type="button">
+                ✦ Special Card
+            </button>
+
+            <button id="game-back-button" type="button">
+                ← Levels
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="cards.js"></script>
+    <script src="special-cards.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
