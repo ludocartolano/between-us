@@ -1,20 +1,30 @@
 
 /* =========================================
    BETWEEN US
-   Main Stylesheet
+   COMPLETE STYLESHEET · VERSION 5
+   Normal / Special / After Dark
 ========================================= */
 
-/* 1. RESET & COLORS */
+/* =========================================
+   1. COLORS & RESET
+========================================= */
 
 :root {
     --background: #241D29;
     --card-front: #3D2B3E;
     --card-special: #513A58;
+
     --pink: #D6A9B3;
     --cream: #FFF4EC;
     --soft-text: #E0CBD2;
     --muted: #B79DAA;
     --gold: #E9C6A5;
+
+    --after-dark-bg: #160D18;
+    --after-dark-front: #28131F;
+    --after-dark-back: #8E3048;
+    --after-dark-accent: #F1D6B8;
+    --after-dark-border: #B56A78;
 }
 
 * {
@@ -30,51 +40,90 @@ html {
 body {
     min-height: 100vh;
     min-height: 100svh;
+
     background: var(--background);
     color: var(--cream);
+
     font-family: Georgia, serif;
     -webkit-font-smoothing: antialiased;
-}
-
-/* 2. SHARED LAYOUT */
-
-.container {
-    min-height: 100vh;
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 20px;
-    text-align: center;
 }
 
 .hidden {
     display: none !important;
 }
 
+/* =========================================
+   2. SHARED LAYOUT
+========================================= */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: safe center;
+
+    padding: 24px 20px;
+
+    text-align: center;
+}
+
+#home-screen,
+#mode-selection,
+#level-selection,
+#rules-section,
+#game-section,
+#welcome-screen,
+#your-game-screen {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #home-screen,
 #level-selection,
 #rules-section,
 #game-section {
-    width: 100%;
     max-width: 380px;
 }
 
-/* 3. BUTTONS */
+#mode-selection {
+    max-width: 780px;
+}
+
+#your-game-screen {
+    max-width: 440px;
+}
+
+#welcome-screen {
+    max-width: 620px;
+}
+
+/* =========================================
+   3. BUTTONS
+========================================= */
 
 button {
     font-family: Arial, sans-serif;
     font-size: 15px;
+
     color: var(--cream);
     background: transparent;
+
     border: 1px solid var(--pink);
     border-radius: 30px;
+
     padding: 15px 18px;
+
     cursor: pointer;
     touch-action: manipulation;
+
     transition:
         background-color 0.2s ease,
+        border-color 0.2s ease,
         opacity 0.2s ease,
         transform 0.2s ease;
 }
@@ -87,20 +136,24 @@ button:active:not(:disabled) {
     transform: scale(0.98);
 }
 
-button:focus-visible,
-.card:focus-visible {
-    outline: 2px solid var(--cream);
-    outline-offset: 4px;
-}
-
 button:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
-/* 4. HOME SCREEN */
+button:focus-visible,
+.card:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--cream);
+    outline-offset: 4px;
+}
 
-#home-screen {
+/* =========================================
+   4. HOME SCREEN
+========================================= */
+
+#home-screen,
+.game-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,15 +161,13 @@ button:disabled {
 
 .game-header {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .subtitle {
     font-family: Arial, sans-serif;
     font-size: 11px;
     letter-spacing: 4px;
+
     color: var(--pink);
     margin-bottom: 24px;
 }
@@ -125,15 +176,16 @@ h1 {
     font-size: clamp(46px, 11vw, 76px);
     font-weight: normal;
     line-height: 1.1;
+
     margin-bottom: 24px;
 }
 
 .description {
     width: 100%;
+
     color: var(--soft-text);
     font-size: 18px;
     line-height: 1.6;
-    text-align: center;
 }
 
 .description span {
@@ -144,8 +196,10 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 14px;
+
     width: 100%;
     max-width: 280px;
+
     margin-top: 48px;
 }
 
@@ -156,64 +210,211 @@ h1 {
 
 .footer {
     margin-top: 52px;
+
     color: var(--muted);
     font-size: 12px;
     font-style: italic;
 }
 
-/* 5. LEVEL SELECTION */
+/* =========================================
+   5. SHARED HEADINGS
+========================================= */
 
+#mode-selection h2,
 #level-selection h2,
-#rules-section h2 {
-    font-size: 30px;
+#rules-section h2,
+#your-game-screen h2 {
+    font-size: clamp(27px, 5vw, 34px);
     font-weight: normal;
-    margin-bottom: 14px;
+    line-height: 1.2;
+
+    margin-bottom: 12px;
 }
 
 .section-description {
     font-size: 15px;
+    line-height: 1.5;
     color: var(--pink);
-    margin-bottom: 24px;
+
+    margin-bottom: 22px;
 }
+
+/* =========================================
+   6. MODE SELECTION
+
+   Compact desktop layout:
+   both experiences fit in one viewport.
+========================================= */
+
+#mode-selection {
+    text-align: center;
+}
+
+.experience-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    width: 100%;
+    margin: 22px auto 18px;
+}
+
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 270px;
+
+    padding: 24px 22px;
+
+    background: #352939;
+    border: 1px solid rgba(214, 169, 179, 0.55);
+    border-radius: 20px;
+
+    color: var(--cream);
+    text-align: center;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.experience-card:hover:not(:disabled) {
+    background: #47334B;
+    border-color: var(--pink);
+    transform: translateY(-2px);
+}
+
+.experience-symbol {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    line-height: 1;
+
+    color: var(--pink);
+}
+
+.experience-title {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.experience-description {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: var(--soft-text);
+}
+
+.experience-duration {
+    margin-top: auto;
+    padding-top: 8px;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+
+    color: var(--pink);
+}
+
+#mode-back-button {
+    padding: 10px 16px;
+    border: none;
+    color: var(--pink);
+}
+
+/* =========================================
+   7. LEVEL SELECTION
+========================================= */
 
 .level-buttons {
     display: flex;
     flex-direction: column;
-    gap: 11px;
+    gap: 10px;
 }
 
 .level-button {
     width: 100%;
-    min-height: 54px;
-    padding: 15px 18px;
+    min-height: 52px;
+
+    padding: 13px 18px;
+
     text-align: left;
     border-radius: 12px;
 }
 
-.level-button:hover {
+.level-button:hover:not(:disabled) {
     background: #453447;
 }
 
 .level-button.surprise {
     background: var(--pink);
     color: var(--background);
+
     text-align: center;
+}
+
+/* AFTER DARK LEVEL BUTTON */
+
+.level-button.after-dark-level {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+
+    min-height: 68px;
+
+    background: var(--after-dark-front);
+    border-color: var(--after-dark-border);
+    color: var(--after-dark-accent);
+}
+
+.level-button.after-dark-level:hover:not(:disabled) {
+    background: #3A1B2B;
+    border-color: var(--after-dark-accent);
+}
+
+.after-dark-level-name {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    letter-spacing: 0.3px;
+}
+
+.after-dark-level-note {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.6px;
+
+    color: #D5A1AB;
 }
 
 #back-button,
 #rules-back-button {
-    margin-top: 20px;
+    margin-top: 18px;
     padding: 10px 16px;
+
     border: none;
     color: var(--pink);
 }
 
-/* 6. RULES */
+/* =========================================
+   8. RULES
+========================================= */
 
 .rules-text {
     text-align: left;
+
     font-size: 15px;
     line-height: 1.65;
+
     color: var(--soft-text);
 }
 
@@ -221,7 +422,9 @@ h1 {
     margin-bottom: 13px;
 }
 
-/* 7. GAME SCREEN */
+/* =========================================
+   9. GAME SCREEN
+========================================= */
 
 #game-section {
     max-width: 380px;
@@ -232,25 +435,32 @@ h1 {
     font-size: 11px;
     letter-spacing: 2.5px;
     line-height: 1.5;
+
     color: var(--pink);
     margin-bottom: 16px;
 }
 
-/* 8. FLIP CARD */
+/* =========================================
+   10. FLIP CARD
+========================================= */
 
 .card {
     width: 100%;
     height: clamp(290px, 46svh, 380px);
+
     perspective: 1000px;
     cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 .card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.7s ease;
+
     transform-style: preserve-3d;
+    transition: transform 0.7s ease;
 }
 
 .card.flipped .card-inner {
@@ -260,16 +470,19 @@ h1 {
 .card-face {
     position: absolute;
     inset: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     padding: 22px;
+
     border: 1px solid var(--pink);
     border-radius: 18px;
+
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 .card-front {
@@ -279,6 +492,7 @@ h1 {
 .card-front h2 {
     font-size: clamp(30px, 8vw, 38px);
     font-weight: normal;
+
     margin-bottom: 14px;
 }
 
@@ -288,13 +502,16 @@ h1 {
     font-size: 10px;
     letter-spacing: 2.5px;
     line-height: 1.5;
+
     color: var(--pink);
 }
 
 .card-back {
     background: var(--pink);
     color: var(--background);
+
     transform: rotateY(180deg);
+
     gap: 14px;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -308,87 +525,778 @@ h1 {
     font-size: clamp(19px, 4.8vw, 25px);
     font-weight: normal;
     line-height: 1.4;
+
     overflow-wrap: anywhere;
 }
 
-/* 9. GAME BUTTONS */
+/* =========================================
+   11. SPECIAL CARDS
+========================================= */
 
-#next-card-button,
-#special-card-button {
-    width: 100%;
-    min-height: 50px;
+.card.special .card-front {
+    background: var(--card-special);
+    border-color: var(--gold);
 }
-
-#next-card-button {
-    margin-top: 16px;
-    background: var(--pink);
-    color: var(--background);
-}
-
-#special-card-button {
-    margin-top: 10px;
-    color: var(--pink);
-}
-
-#game-back-button {
-    margin-top: 8px;
-    padding: 10px 16px;
-    border: none;
-    color: var(--pink);
-}
-
-/* 10. SPECIAL CARDS */
 
 .card.special .card-back {
     background: var(--card-special);
     color: var(--cream);
+
     border-color: var(--gold);
     gap: 10px;
 }
 
-.card.special .card-category {
+.card.special .card-category,
+.card.special .card-front p {
     color: var(--gold);
 }
 
 .card.special .card-back h2 {
     color: var(--cream);
+
     font-size: clamp(17px, 4.3vw, 22px);
     line-height: 1.4;
 }
 
-/* 11. SPECIAL CARD SCENARIOS */
+/* =========================================
+   12. AFTER DARK CARDS
+
+   Overrides special styling for S9 / S10.
+========================================= */
+
+.card.after-dark .card-front,
+.card.special.after-dark .card-front {
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            #4B2334 0%,
+            var(--after-dark-front) 65%,
+            var(--after-dark-bg) 100%
+        );
+
+    border-color: var(--after-dark-border);
+    box-shadow:
+        inset 0 0 32px rgba(181, 106, 120, 0.08);
+}
+
+.card.after-dark .card-front h2,
+.card.special.after-dark .card-front h2 {
+    color: var(--after-dark-accent);
+}
+
+.card.after-dark .card-front p,
+.card.special.after-dark .card-front p {
+    color: #D5A1AB;
+}
+
+.card.after-dark .card-back,
+.card.special.after-dark .card-back {
+    background:
+        linear-gradient(
+            150deg,
+            #A04459 0%,
+            var(--after-dark-back) 48%,
+            #63243B 100%
+        );
+
+    border-color: var(--after-dark-accent);
+    color: #FFF5ED;
+}
+
+.card.after-dark .card-category,
+.card.special.after-dark .card-category {
+    color: var(--after-dark-accent);
+}
+
+.card.after-dark .card-back h2,
+.card.special.after-dark .card-back h2 {
+    color: #FFF5ED;
+}
+
+.card.after-dark .card-back {
+    scrollbar-color:
+        var(--after-dark-accent)
+        transparent;
+}
+
+/* =========================================
+   13. SCENARIOS
+========================================= */
 
 #scenario-area {
     width: 100%;
-    text-align: center;
     margin-top: 6px;
+
+    text-align: center;
 }
 
 #scenario-text {
     font-family: Georgia, serif;
     font-size: clamp(16px, 4vw, 19px);
     line-height: 1.4;
+
     overflow-wrap: anywhere;
 }
 
 #another-scenario-button {
     min-height: 38px;
     margin-top: 12px;
+
     padding: 8px 14px;
+
     font-size: 13px;
     color: var(--cream);
     border-color: var(--gold);
 }
 
-/* 12. MOBILE LAYOUT */
+.card.after-dark #another-scenario-button {
+    border-color: var(--after-dark-accent);
+}
 
-@media (max-width: 480px) {
+/* =========================================
+   14. GAME CONTROLS
+========================================= */
+
+#next-card-button,
+#special-card-button,
+#change-level-button,
+#continue-journey-button {
+    width: 100%;
+    min-height: 48px;
+}
+
+#next-card-button {
+    margin-top: 16px;
+
+    background: var(--pink);
+    color: var(--background);
+}
+
+#special-card-button,
+#change-level-button,
+#continue-journey-button {
+    margin-top: 10px;
+}
+
+#special-card-button {
+    color: var(--pink);
+}
+
+#change-level-button {
+    border-color: var(--pink);
+    color: var(--cream);
+}
+
+#continue-journey-button {
+    background: var(--card-special);
+    color: var(--cream);
+    border-color: var(--gold);
+}
+
+#game-back-button {
+    margin-top: 8px;
+    padding: 10px 16px;
+
+    border: none;
+    color: var(--pink);
+}
+
+/* =========================================
+   15. CHALLENGE TIMER
+========================================= */
+
+#timer-area {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 4px;
+}
+
+#timer-display {
+    --timer-progress: 100%;
+
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            closest-side,
+            var(--card-special) 88%,
+            transparent 90%
+        ),
+        conic-gradient(
+            var(--pink) var(--timer-progress),
+            #78617C 0
+        );
+
+    color: var(--cream);
+
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+#timer-button {
+    min-height: 38px;
+    padding: 9px 18px;
+
+    background: var(--pink);
+    color: var(--background);
+
+    border-color: var(--pink);
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#timer-display.timer-complete {
+    font-size: 16px;
+    color: var(--gold);
+}
+
+/* AFTER DARK TIMER */
+
+.card.after-dark #timer-display {
+    background:
+        radial-gradient(
+            closest-side,
+            var(--after-dark-front) 88%,
+            transparent 90%
+        ),
+        conic-gradient(
+            var(--after-dark-accent)
+                var(--timer-progress),
+            #663C4C 0
+        );
+
+    color: var(--after-dark-accent);
+}
+
+.card.after-dark #timer-button {
+    background: var(--after-dark-accent);
+    color: var(--after-dark-bg);
+    border-color: var(--after-dark-accent);
+}
+
+/* =========================================
+   16. MODAL OVERLAYS
+========================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 22px;
+
+    background: rgba(18, 12, 22, 0.84);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.between-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 350px;
+    max-height: 90svh;
+
+    overflow-y: auto;
+
+    padding: 34px 26px 28px;
+
+    background: var(--card-front);
+    border: 1px solid var(--pink);
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    animation: modalAppear 0.3s ease;
+}
+
+.modal-eyebrow {
+    margin-bottom: 18px;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: var(--gold);
+}
+
+.between-modal h2 {
+    margin-bottom: 18px;
+
+    font-size: 29px;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.modal-description {
+    margin-bottom: 26px;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: var(--soft-text);
+}
+
+.modal-primary,
+.modal-secondary {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 12px 18px;
+
+    font-size: 14px;
+}
+
+.modal-primary {
+    margin-bottom: 12px;
+
+    background: var(--pink);
+    color: var(--background);
+}
+
+.modal-secondary {
+    background: transparent;
+    color: var(--cream);
+}
+
+.modal-note {
+    margin-top: 20px;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: var(--muted);
+}
+
+/* =========================================
+   17. AFTER DARK CONSENT MODAL
+========================================= */
+
+.after-dark-overlay {
+    z-index: 1200;
+
+    background: rgba(9, 5, 11, 0.93);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.after-dark-consent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 430px;
+    max-height: 92svh;
+
+    overflow-y: auto;
+
+    padding: 34px 28px 28px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #351A29,
+            var(--after-dark-bg)
+        );
+
+    border: 1px solid var(--after-dark-border);
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+
+    animation: modalAppear 0.3s ease;
+}
+
+.after-dark-eyebrow {
+    margin-bottom: 18px;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: var(--after-dark-accent);
+}
+
+.after-dark-consent h2 {
+    max-width: 340px;
+    margin-bottom: 16px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(27px, 6vw, 35px);
+    font-weight: normal;
+    line-height: 1.2;
+
+    color: #FFF5ED;
+}
+
+.after-dark-intro {
+    max-width: 310px;
+    margin-bottom: 26px;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #E0BFC5;
+}
+
+.after-dark-agreements {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.after-dark-agreements label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    width: 100%;
+    min-height: 56px;
+
+    padding: 14px 16px;
+
+    background: rgba(255, 244, 236, 0.045);
+
+    border: 1px solid rgba(241, 214, 184, 0.3);
+    border-radius: 12px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+
+    color: #FFF5ED;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.after-dark-agreements label:has(input:checked) {
+    background: rgba(181, 106, 120, 0.18);
+    border-color: var(--after-dark-accent);
+}
+
+.after-dark-agreements input {
+    width: 19px;
+    height: 19px;
+
+    flex-shrink: 0;
+
+    accent-color: var(--after-dark-border);
+    cursor: pointer;
+}
+
+.after-dark-boundaries {
+    margin-bottom: 24px;
+
+    font-size: 13px;
+    line-height: 1.65;
+
+    color: #D6B3BC;
+}
+
+#after-dark-accept,
+#after-dark-decline {
+    width: 100%;
+    min-height: 48px;
+}
+
+#after-dark-accept {
+    margin-bottom: 12px;
+
+    background: var(--after-dark-accent);
+    border-color: var(--after-dark-accent);
+
+    color: var(--after-dark-bg);
+    font-weight: 600;
+}
+
+#after-dark-accept:disabled {
+    opacity: 0.3;
+}
+
+#after-dark-decline {
+    background: transparent;
+    border-color: var(--after-dark-border);
+
+    color: #FFF5ED;
+}
+
+/* =========================================
+   18. WELCOME BACK
+========================================= */
+
+#welcome-screen {
+    padding: 24px 16px 20px;
+
+    background: #261D2B;
+    border-radius: 22px;
+
+    text-align: center;
+}
+
+.welcome-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.welcome-heart {
+    font-size: 25px;
+    line-height: 1;
+    color: var(--pink);
+}
+
+.welcome-header h2 {
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.welcome-header p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: var(--soft-text);
+}
+
+.welcome-progress {
+    padding: 18px 14px;
+
+    background: #3D2B40;
+    border-radius: 13px;
+
+    text-align: left;
+}
+
+.welcome-progress-top,
+.welcome-progress-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.welcome-progress-top {
+    margin-bottom: 12px;
+}
+
+.welcome-progress-top strong {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.welcome-progress-top span {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: var(--pink);
+}
+
+.welcome-progress-track {
+    width: 100%;
+    height: 6px;
+
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    background: #715A75;
+    border-radius: 20px;
+}
+
+.welcome-progress-fill {
+    width: 0%;
+    height: 100%;
+
+    background: var(--pink);
+    border-radius: inherit;
+
+    transition: width 0.35s ease;
+}
+
+.welcome-progress-bottom {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: var(--soft-text);
+}
+
+.welcome-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin-top: 13px;
+}
+
+#welcome-resume-button,
+#welcome-new-button {
+    width: 100%;
+    min-height: 42px;
+
+    font-size: 13px;
+}
+
+#welcome-resume-button {
+    background: #F2F0F1;
+    border-color: #F2F0F1;
+
+    color: var(--background);
+}
+
+#welcome-new-button {
+    border-color: #715A75;
+}
+
+#welcome-manage-button {
+    margin-top: 14px;
+
+    background: transparent;
+    border: none;
+
+    font-size: 12px;
+    color: var(--pink);
+}
+
+/* =========================================
+   19. YOUR GAME
+========================================= */
+
+.your-game-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin: 28px 0;
+}
+
+.manage-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+    padding: 18px;
+
+    background: #352939;
+    border: 1px solid #715A75;
+    border-radius: 15px;
+
+    text-align: left;
+}
+
+.manage-option:hover:not(:disabled) {
+    background: #47334B;
+    border-color: var(--pink);
+}
+
+.manage-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 42px;
+    height: 42px;
+
+    background: var(--card-special);
+    border-radius: 12px;
+
+    font-size: 24px;
+    color: var(--pink);
+}
+
+.manage-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.manage-copy strong {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.manage-copy small {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+
+    color: var(--soft-text);
+}
+
+#manage-reset-all-button {
+    border-color: rgba(214, 169, 179, 0.35);
+}
+
+#manage-reset-all-button .manage-icon {
+    color: #E6A0AC;
+}
+
+#manage-back-button {
+    padding: 10px 16px;
+    border: none;
+    color: var(--pink);
+}
+
+/* =========================================
+   20. ANIMATIONS
+========================================= */
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================
+   21. TABLETS & MOBILE
+========================================= */
+
+@media (max-width: 600px) {
 
     .container {
         padding: 18px 16px;
     }
 
-    /* Exactly three subtitle lines */
     .description span {
         display: block;
     }
@@ -406,13 +1314,39 @@ h1 {
         margin-top: 44px;
     }
 
-    #level-selection h2,
-    #rules-section h2 {
-        font-size: 28px;
+    /* Stack the experience cards on mobile */
+
+    .experience-options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        max-width: 380px;
+        margin: 18px auto 12px;
     }
 
-    .section-description {
-        margin-bottom: 19px;
+    .experience-card {
+        min-height: auto;
+        gap: 9px;
+
+        padding: 18px 20px;
+    }
+
+    .experience-symbol {
+        font-size: 24px;
+    }
+
+    .experience-title {
+        font-size: 22px;
+    }
+
+    .experience-description {
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .experience-duration {
+        margin-top: 0;
+        padding-top: 4px;
     }
 
     .level-buttons {
@@ -433,10 +1367,6 @@ h1 {
         padding: 18px;
     }
 
-    .card-level {
-        margin-bottom: 13px;
-    }
-
     .card-back h2 {
         font-size: 21px;
     }
@@ -444,26 +1374,115 @@ h1 {
     .card.special .card-back h2 {
         font-size: 18px;
     }
+
+    .card-level {
+        margin-bottom: 13px;
+    }
+
+    .between-modal {
+        padding: 28px 22px 24px;
+    }
+
+    .between-modal h2 {
+        font-size: 27px;
+    }
+
+    .modal-description {
+        font-size: 15px;
+    }
+
+    .after-dark-consent {
+        padding: 28px 20px 22px;
+    }
+
+    .after-dark-intro {
+        font-size: 15px;
+    }
+
+    #timer-area {
+        gap: 9px;
+    }
+
+    #timer-display {
+        width: 92px;
+        height: 92px;
+        font-size: 22px;
+    }
+
+    #timer-display.timer-complete {
+        font-size: 14px;
+    }
+
+    #timer-button {
+        min-height: 36px;
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .card.special:has(
+        #timer-area:not(.hidden)
+    ) .card-back {
+        gap: 8px;
+        padding: 14px;
+    }
+
+    .card.special:has(
+        #timer-area:not(.hidden)
+    ) .card-back h2 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    #welcome-screen {
+        padding: 22px 14px;
+    }
+
+    .welcome-progress {
+        padding: 16px 12px;
+    }
+
+    .welcome-progress-bottom {
+        font-size: 11px;
+    }
+
+    .manage-option {
+        padding: 15px;
+    }
 }
 
-/* 13. SHORT SCREENS */
+/* =========================================
+   22. SHORT SCREENS
+========================================= */
 
 @media (max-height: 700px) {
 
     .container {
-        justify-content: flex-start;
-    }
-
-    .card {
-        height: clamp(260px, 42svh, 330px);
+        justify-content: safe center;
+        padding-top: 14px;
+        padding-bottom: 14px;
     }
 
     .game-menu {
-        margin-top: 30px;
+        margin-top: 26px;
     }
 
     .footer {
-        margin-top: 30px;
+        margin-top: 28px;
+    }
+
+    .experience-options {
+        margin-top: 14px;
+        margin-bottom: 10px;
+    }
+
+    .experience-card {
+        min-height: auto;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .card {
+        height: clamp(250px, 42svh, 330px);
     }
 
     .level-buttons {
@@ -474,63 +1493,77 @@ h1 {
         min-height: 44px;
         padding: 10px 15px;
     }
+
+    #timer-display {
+        width: 78px;
+        height: 78px;
+        font-size: 19px;
+    }
+
+    #timer-display.timer-complete {
+        font-size: 12px;
+    }
+
+    .after-dark-consent {
+        padding-top: 20px;
+        padding-bottom: 18px;
+    }
+
+    .after-dark-intro {
+        margin-bottom: 16px;
+    }
+
+    .after-dark-agreements {
+        margin-bottom: 16px;
+    }
+
+    .after-dark-boundaries {
+        margin-bottom: 16px;
+    }
 }
 
-/* 14. REDUCED MOTION */
+/* =========================================
+   23. REDUCED MOTION
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     .card-inner,
-    button {
+    button,
+    .experience-card,
+    .welcome-progress-fill {
         transition: none;
     }
+
+    .between-modal,
+    .after-dark-consent {
+        animation: none;
+    }
 }
 
-
-/* =========================================
-   MOBILE SCREEN ALIGNMENT
-========================================= */
-
-.container {
-    min-height: 100svh;
+/* PREVIOUS / NEXT CARD NAVIGATION */
+.card-navigation {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+}
+.card-navigation #next-card-button,
+.card-navigation #previous-card-button {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    min-width: 0;
+    margin-top: 0;
+    min-height: 48px;
+    font-size: clamp(12px, 3.3vw, 16px);
 }
-
-#home-screen,
-#level-selection,
-#rules-section,
-#game-section {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+#previous-card-button {
+    background: #453541;
+    color: #FFF4EC;
+    border: 1px solid #D6A9B3;
+    border-radius: 8px;
+    cursor: pointer;
 }
-
-/* Center screens when space is available,
-   allow scrolling when content is taller */
-
-@media (max-width: 480px) {
-
-    .container {
-        justify-content: safe center;
-    }
-
-    #home-screen,
-    #level-selection,
-    #rules-section,
-    #game-section {
-        text-align: center;
-    }
-
-    .card {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-.card {
-    -webkit-tap-highlight-color: transparent;
+#previous-card-button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
 }

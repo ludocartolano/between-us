@@ -4,30 +4,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Between Us | A Card Game for Two</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="Between Us">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="apple-touch-icon.png">
+
+    <meta name="apple-mobile-web-app-title"
+          content="Between Us">
+
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="default">
+
     <meta name="theme-color" content="#241D29">
-
-
 </head>
 
 <body>
 
     <main class="container">
 
-        <!-- HOME SCREEN -->
+        <!-- =====================================
+             HOME SCREEN
+        ====================================== -->
+
         <section id="home-screen">
 
             <div class="game-header">
 
-                <p class="subtitle">A CARD GAME FOR TWO</p>
+                <p class="subtitle">
+                    A CARD GAME FOR TWO
+                </p>
 
                 <h1>Between Us</h1>
 
@@ -41,22 +55,325 @@
 
             <div class="game-menu" id="main-menu">
 
-                <button id="start-button" type="button">
+                <button id="start-button"
+                        type="button">
                     Let's Play
                 </button>
 
-                <button id="rules-button" type="button">
+                <button id="rules-button"
+                        type="button">
                     How to Play
+                </button>
+
+                <button id="your-game-button"
+                        type="button">
+                    Your Game
                 </button>
 
             </div>
 
-            <p class="footer">No right answers. Just us.</p>
+            <p class="footer">
+                No right answers. Just us.
+            </p>
 
         </section>
 
 
-        <!-- LEVEL SELECTION -->
+        <!-- =====================================
+             WELCOME BACK
+        ====================================== -->
+
+        <section id="welcome-screen" class="hidden">
+
+            <div class="welcome-header">
+
+                <span class="welcome-heart"
+                      aria-hidden="true">♡</span>
+
+                <h2>Welcome Back</h2>
+
+                <p>
+                    Your story isn't over yet.
+                </p>
+
+            </div>
+
+            <div class="welcome-progress">
+
+                <div class="welcome-progress-top">
+
+                    <strong id="welcome-mode">
+                        Guided Journey
+                    </strong>
+
+                    <span id="welcome-level">
+                        Level 1 of 4
+                    </span>
+
+                </div>
+
+                <div id="welcome-progress-track"
+                     class="welcome-progress-track"
+                     role="progressbar"
+                     aria-label="Journey progress"
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     aria-valuenow="0">
+
+                    <div id="welcome-progress-fill"
+                         class="welcome-progress-fill">
+                    </div>
+
+                </div>
+
+                <div class="welcome-progress-bottom">
+
+                    <span id="welcome-questions">
+                        0 questions drawn
+                    </span>
+
+                    <span id="welcome-specials">
+                        0 special cards
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="welcome-actions">
+
+                <button id="welcome-resume-button"
+                        type="button">
+                    Resume Our Journey →
+                </button>
+
+                <button id="welcome-new-button"
+                        type="button">
+                    Start a New Game
+                </button>
+
+            </div>
+
+            <button id="welcome-manage-button"
+                    type="button">
+                Your Game
+            </button>
+
+        </section>
+
+
+        <!-- =====================================
+             YOUR GAME
+        ====================================== -->
+
+        <section id="your-game-screen" class="hidden">
+
+            <p class="subtitle">
+                BETWEEN US
+            </p>
+
+            <h2>Your Game</h2>
+
+            <p class="section-description">
+                Your journey, your way.
+            </p>
+
+            <div class="your-game-options">
+
+                <!-- RESUME GAME -->
+
+                <button id="manage-resume-button"
+                        class="manage-option"
+                        type="button">
+
+                    <span class="manage-icon"
+                          aria-hidden="true">▷</span>
+
+                    <span class="manage-copy">
+
+                        <strong>
+                            Resume Game
+                        </strong>
+
+                        <small>
+                            Continue where you left off.
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <!-- NEW GAME -->
+
+                <button id="manage-new-button"
+                        class="manage-option"
+                        type="button">
+
+                    <span class="manage-icon"
+                          aria-hidden="true">＋</span>
+
+                    <span class="manage-copy">
+
+                        <strong>
+                            New Game
+                        </strong>
+
+                        <small>
+                            Start fresh, keep your
+                            question history.
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <!-- RESET CARD HISTORY -->
+
+                <button id="manage-reset-button"
+                        class="manage-option"
+                        type="button">
+
+                    <span class="manage-icon"
+                          aria-hidden="true">↺</span>
+
+                    <span class="manage-copy">
+
+                        <strong>
+                            Reset Card History
+                        </strong>
+
+                        <small>
+                            Make all 90 questions
+                            equally available again.
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <!-- RESET EVERYTHING -->
+
+                <button id="manage-reset-all-button"
+                        class="manage-option"
+                        type="button">
+
+                    <span class="manage-icon"
+                          aria-hidden="true">✕</span>
+
+                    <span class="manage-copy">
+
+                        <strong>
+                            Reset Everything
+                        </strong>
+
+                        <small>
+                            Delete your saved game and
+                            question history.
+                            Start completely fresh.
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+            <button id="manage-back-button"
+                    type="button">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <!-- =====================================
+             MODE SELECTION
+        ====================================== -->
+
+        <section id="mode-selection" class="hidden">
+
+            <p class="subtitle">
+                TWO WAYS TO CONNECT
+            </p>
+
+            <h2>Choose Your Experience</h2>
+
+            <p class="section-description">
+                Follow a journey or make your own.
+            </p>
+
+            <div class="experience-options">
+
+                <!-- GUIDED JOURNEY -->
+
+                <button id="guided-mode-button"
+                        class="experience-card"
+                        type="button">
+
+                    <span class="experience-symbol"
+                          aria-hidden="true">✦</span>
+
+                    <span class="experience-title">
+                        Guided Journey
+                    </span>
+
+                    <span class="experience-description">
+                        Four levels. One shared journey.
+                        Let the conversation unfold,
+                        one layer at a time.
+                        An optional fifth chapter awaits,
+                        only if you both choose it.
+                    </span>
+
+                    <span class="experience-duration">
+                        ABOUT 60–90 MINUTES
+                    </span>
+
+                </button>
+
+
+                <!-- FREE EXPLORATION -->
+
+                <button id="free-mode-button"
+                        class="experience-card"
+                        type="button">
+
+                    <span class="experience-symbol"
+                          aria-hidden="true">♡</span>
+
+                    <span class="experience-title">
+                        Free Exploration
+                    </span>
+
+                    <span class="experience-description">
+                        Choose your depth, follow your
+                        curiosity and change direction
+                        whenever you like.
+                    </span>
+
+                    <span class="experience-duration">
+                        YOUR TIME, YOUR PACE
+                    </span>
+
+                </button>
+
+            </div>
+
+            <button id="mode-back-button"
+                    type="button">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <!-- =====================================
+             LEVEL SELECTION
+        ====================================== -->
+
         <section id="level-selection" class="hidden">
 
             <h2>Choose Your Depth</h2>
@@ -67,88 +384,199 @@
 
             <div class="level-buttons">
 
-                <button class="level-button" data-level="1" type="button">
+                <button class="level-button"
+                        data-level="1"
+                        type="button">
                     01 · The Spark
                 </button>
 
-                <button class="level-button" data-level="2" type="button">
+                <button class="level-button"
+                        data-level="2"
+                        type="button">
                     02 · Beneath the Surface
                 </button>
 
-                <button class="level-button" data-level="3" type="button">
+                <button class="level-button"
+                        data-level="3"
+                        type="button">
                     03 · The Chemistry
                 </button>
 
-                <button class="level-button" data-level="4" type="button">
+                <button class="level-button"
+                        data-level="4"
+                        type="button">
                     04 · Between Us
                 </button>
 
-                <button class="level-button surprise" data-level="all" type="button">
+                <!-- AFTER DARK -->
+
+                <button class="level-button after-dark-level"
+                        data-level="5"
+                        type="button">
+
+                    <span class="after-dark-level-name">
+                        05 · After Dark
+                    </span>
+
+                    <span class="after-dark-level-note">
+                        🖤 ONLY IF YOU BOTH AGREE
+                    </span>
+
+                </button>
+
+                <!-- SURPRISE ME -->
+
+                <button class="level-button surprise"
+                        data-level="all"
+                        type="button">
                     ✦ Surprise Me
                 </button>
 
             </div>
 
-            <button id="back-button" type="button">
+            <button id="back-button"
+                    type="button">
                 ← Back
             </button>
 
         </section>
 
 
-        <!-- RULES -->
+        <!-- =====================================
+             HOW TO PLAY
+        ====================================== -->
+
         <section id="rules-section" class="hidden">
 
             <h2>How to Play</h2>
 
             <div class="rules-text">
 
-                <p>1. Choose a level and draw a card.</p>
-                <p>2. Take turns answering each question.</p>
-                <p>3. Listen with curiosity, not judgment.</p>
-                <p>4. You can always pass. No explanation needed.</p>
-                <p>5. Change levels whenever you want.</p>
-                <p>6. No right answers. No pressure. Just us.</p>
+                <p>
+                    1. Choose your experience:
+                    Guided Journey or Free Exploration.
+                </p>
+
+                <p>
+                    2. Take turns answering each question.
+                    Listen with curiosity, not judgment.
+                </p>
+
+                <p>
+                    3. You can always pass,
+                    skip a challenge, or stop playing.
+                    No explanation needed.
+                </p>
+
+                <p>
+                    4. Guided Journey takes you through
+                    four levels, with an optional
+                    fifth chapter.
+                </p>
+
+                <p>
+                    5. In Free Exploration,
+                    choose your level,
+                    change direction,
+                    or let Surprise Me decide.
+                </p>
+
+                <p>
+                    6. After Dark is optional
+                    and requires both players'
+                    agreement before entering.
+                </p>
+
+                <p>
+                    7. Sharing a fantasy never means
+                    agreeing to act on it.
+                </p>
+
+                <p>
+                    8. No right answers.
+                    No pressure. Just us.
+                </p>
 
             </div>
 
-            <button id="rules-back-button" type="button">
+            <button id="rules-back-button"
+                    type="button">
                 ← Back
             </button>
 
         </section>
 
 
-        <!-- GAME SCREEN -->
+        <!-- =====================================
+             GAME SCREEN
+        ====================================== -->
+
         <section id="game-section" class="hidden">
 
-            <p class="card-level" id="current-level"></p>
+            <p class="card-level"
+               id="current-level"></p>
 
-            <div
-                class="card"
-                id="question-card"
-                role="button"
-                tabindex="0"
-                aria-label="Reveal question"
-            >
+            <!-- QUESTION CARD -->
+
+            <div class="card"
+                 id="question-card"
+                 role="button"
+                 tabindex="0"
+                 aria-label="Reveal question">
 
                 <div class="card-inner">
 
                     <!-- CARD FRONT -->
+
                     <div class="card-face card-front">
 
                         <h2>Between Us</h2>
 
-                        <p>TAP TO REVEAL</p>
+                        <p>
+                            TAP TO REVEAL
+                        </p>
 
                     </div>
 
                     <!-- CARD BACK -->
+
                     <div class="card-face card-back">
 
-                        <p class="card-category" id="card-category"></p>
+                        <p class="card-category"
+                           id="card-category"></p>
 
                         <h2 id="question-text"></h2>
+
+                        <!-- SPECIAL CARD SCENARIOS -->
+
+                        <div id="scenario-area"
+                             class="hidden">
+
+                            <p id="scenario-text"></p>
+
+                            <button id="another-scenario-button"
+                                    type="button">
+                                Another Scenario
+                            </button>
+
+                        </div>
+
+                        <!-- CHALLENGE TIMER · 30s / 60s -->
+
+                        <div id="timer-area"
+                             class="hidden">
+
+                            <div id="timer-display"
+                                 aria-live="polite">
+                                00:30
+                            </div>
+
+                            <button id="timer-button"
+                                    type="button">
+                                Start Challenge
+                            </button>
+
+                        </div>
 
                     </div>
 
@@ -156,16 +584,37 @@
 
             </div>
 
-            <button id="next-card-button" type="button">
-                Next Card →
-            </button>
+            <!-- GAME CONTROLS -->
 
-            <button id="special-card-button" type="button">
+            <div class="card-navigation">
+                <button id="previous-card-button" type="button" disabled>
+                    ← Previous Card
+                </button>
+                <button id="next-card-button" type="button">
+                    Next Card →
+                </button>
+            </div>
+
+            <button id="special-card-button"
+                    type="button">
                 ✦ Special Card
             </button>
 
-            <button id="game-back-button" type="button">
-                ← Levels
+            <button id="change-level-button"
+                    class="hidden"
+                    type="button">
+                Change Level
+            </button>
+
+            <button id="continue-journey-button"
+                    class="hidden"
+                    type="button">
+                Ready for the Next Level? →
+            </button>
+
+            <button id="game-back-button"
+                    type="button">
+                ← Home
             </button>
 
         </section>
@@ -173,7 +622,186 @@
     </main>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =====================================
+         NEW GAME CONFIRMATION
+    ====================================== -->
+
+    <div id="confirm-overlay"
+         class="modal-overlay hidden">
+
+        <div class="between-modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="confirm-title">
+
+            <p class="modal-eyebrow">
+                ✦ BETWEEN US ✦
+            </p>
+
+            <h2 id="confirm-title">
+                A New Beginning?
+            </h2>
+
+            <p class="modal-description">
+                You already have a game in progress.
+                Starting a new one will replace
+                your saved game.
+            </p>
+
+            <button id="confirm-new-game"
+                    class="modal-primary"
+                    type="button">
+                Start New Game
+            </button>
+
+            <button id="cancel-new-game"
+                    class="modal-secondary"
+                    type="button">
+                Keep Our Journey
+            </button>
+
+            <p class="modal-note">
+                Your question history will be kept.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         GUIDED JOURNEY MODAL
+    ====================================== -->
+
+    <div id="journey-overlay"
+         class="modal-overlay hidden">
+
+        <div class="between-modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="journey-title">
+
+            <p class="modal-eyebrow">
+                ✦ BETWEEN US ✦
+            </p>
+
+            <h2 id="journey-title">
+                Ready to Go Deeper?
+            </h2>
+
+            <p id="journey-description"
+               class="modal-description">
+                Every conversation opens another door.
+                Shall we see what's next?
+            </p>
+
+            <button id="next-level-button"
+                    class="modal-primary"
+                    type="button">
+                Next Level
+            </button>
+
+            <button id="stay-level-button"
+                    class="modal-secondary"
+                    type="button">
+                Stay a Little Longer
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         RESET CARD HISTORY MODAL
+    ====================================== -->
+
+    <div id="reset-history-overlay"
+         class="modal-overlay hidden">
+
+        <div class="between-modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="reset-history-title">
+
+            <p class="modal-eyebrow">
+                ✦ BETWEEN US ✦
+            </p>
+
+            <h2 id="reset-history-title">
+                A Fresh Start?
+            </h2>
+
+            <p class="modal-description">
+                All 90 questions will become equally
+                available again. Your current game
+                will stay exactly as it is.
+            </p>
+
+            <button id="confirm-reset-history"
+                    class="modal-primary"
+                    type="button">
+                Reset History
+            </button>
+
+            <button id="cancel-reset-history"
+                    class="modal-secondary"
+                    type="button">
+                Keep My History
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         RESET EVERYTHING MODAL
+    ====================================== -->
+
+    <div id="reset-all-overlay"
+         class="modal-overlay hidden">
+
+        <div class="between-modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="reset-all-title">
+
+            <p class="modal-eyebrow">
+                ✦ BETWEEN US ✦
+            </p>
+
+            <h2 id="reset-all-title">
+                Start From Scratch?
+            </h2>
+
+            <p class="modal-description">
+                This will delete your saved game and
+                all question history. You'll return
+                to the original home screen.
+            </p>
+
+            <button id="confirm-reset-all"
+                    class="modal-primary"
+                    type="button">
+                Reset Everything
+            </button>
+
+            <button id="cancel-reset-all"
+                    class="modal-secondary"
+                    type="button">
+                Keep Our Story
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
     <script src="cards.js"></script>
     <script src="special-cards.js"></script>
     <script src="script.js"></script>

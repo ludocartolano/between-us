@@ -1,6 +1,20 @@
 
+/* =========================================
+   BETWEEN US
+   COMPLETE QUESTION DECK
+
+   90 questions
+   5 levels
+   18 questions per level
+========================================= */
+
 const CARDS = [
-    // LEVEL 1: THE SPARK
+
+    // =====================================
+    // LEVEL 1 · THE SPARK
+    // Cards 1–18
+    // =====================================
+
     {
         id: 1,
         level: 1,
@@ -17,13 +31,13 @@ const CARDS = [
         id: 3,
         level: 1,
         category: "The Spark",
-        question: "What kind of person brings out your most ridiculous side?"
+        question: "What's the most absurd thing you've ever taken surprisingly seriously?"
     },
     {
         id: 4,
         level: 1,
         category: "The Spark",
-        question: "What's a strangely specific quality you find attractive in someone?"
+        question: "What's a tiny, irrational pet peeve you have?"
     },
     {
         id: 5,
@@ -47,7 +61,7 @@ const CARDS = [
         id: 8,
         level: 1,
         category: "The Spark",
-        question: "What would your closest friends say is your most predictable habit?"
+        question: "What's a completely unnecessary rule you always follow?"
     },
     {
         id: 9,
@@ -71,13 +85,13 @@ const CARDS = [
         id: 12,
         level: 1,
         category: "The Spark",
-        question: "What's something you've changed your mind about in the last few years?"
+        question: "What's a guilty pleasure you secretly enjoy but would never proudly admit to?"
     },
     {
         id: 13,
         level: 1,
         category: "The Spark",
-        question: "What kind of situation makes you feel completely like yourself?"
+        question: "What ordinary activity makes you lose track of time?"
     },
     {
         id: 14,
@@ -89,28 +103,32 @@ const CARDS = [
         id: 15,
         level: 1,
         category: "The Spark",
-        question: "What's a harmless red flag you probably have?"
+        question: "What's a harmless thing you're embarrassingly competitive about?"
     },
     {
         id: 16,
         level: 1,
         category: "The Spark",
-        question: "What's something people often misunderstand about your personality?"
+        question: "What's a first impression people often get wrong about you?"
     },
     {
         id: 17,
         level: 1,
         category: "The Spark",
-        question: "If someone followed you around for a day, what would surprise them most?"
+        question: "If you could relive one completely ordinary day just for the atmosphere, which would it be?"
     },
     {
         id: 18,
         level: 1,
         category: "The Spark",
-        question: "What's a question you wish people asked you more often?"
+        question: "What's the weirdest rabbit hole you've ever gone down out of pure curiosity?"
     },
 
-    // LEVEL 2: BENEATH THE SURFACE
+    // =====================================
+    // LEVEL 2 · BENEATH THE SURFACE
+    // Cards 19–36
+    // =====================================
+
     {
         id: 19,
         level: 2,
@@ -121,7 +139,7 @@ const CARDS = [
         id: 20,
         level: 2,
         category: "Beneath the Surface",
-        question: "What part of your childhood do you think shaped you the most?"
+        question: "What responsibility did you take on earlier than you expected?"
     },
     {
         id: 21,
@@ -133,7 +151,7 @@ const CARDS = [
         id: 22,
         level: 2,
         category: "Beneath the Surface",
-        question: "What does financial independence mean to you personally?"
+        question: "What does having enough money allow you to say no to?"
     },
     {
         id: 23,
@@ -145,7 +163,7 @@ const CARDS = [
         id: 24,
         level: 2,
         category: "Beneath the Surface",
-        question: "What's something you've had to unlearn as an adult?"
+        question: "What's a difficult decision you made that you're now grateful for?"
     },
     {
         id: 25,
@@ -163,7 +181,7 @@ const CARDS = [
         id: 27,
         level: 2,
         category: "Beneath the Surface",
-        question: "How has your relationship with money changed as you've grown older?"
+        question: "What's a purchase that taught you something about your priorities?"
     },
     {
         id: 28,
@@ -175,7 +193,7 @@ const CARDS = [
         id: 29,
         level: 2,
         category: "Beneath the Surface",
-        question: "What's a fear you've become better at managing?"
+        question: "What uncertainty have you learned to live with rather than solve?"
     },
     {
         id: 30,
@@ -193,7 +211,7 @@ const CARDS = [
         id: 32,
         level: 2,
         category: "Beneath the Surface",
-        question: "What's a belief you inherited from your upbringing that you've questioned?"
+        question: "What's a tradition from your upbringing you want to keep, and why?"
     },
     {
         id: 33,
@@ -211,16 +229,20 @@ const CARDS = [
         id: 35,
         level: 2,
         category: "Beneath the Surface",
-        question: "What's something you want to experience in life but haven't made time for yet?"
+        question: "What experience would you regret never making room for?"
     },
     {
         id: 36,
         level: 2,
         category: "Beneath the Surface",
-        question: "What do you think your younger self would find most surprising about your life today?"
+        question: "In what way have you become more like someone you once admired?"
     },
 
-    // LEVEL 3: THE CHEMISTRY
+    // =====================================
+    // LEVEL 3 · THE CHEMISTRY
+    // Cards 37–54
+    // =====================================
+
     {
         id: 37,
         level: 3,
@@ -231,13 +253,13 @@ const CARDS = [
         id: 38,
         level: 3,
         category: "The Chemistry",
-        question: "What's something subtle that makes someone instantly more attractive to you?"
+        question: "What's something someone can do without touching you that creates instant sexual tension?"
     },
     {
         id: 39,
         level: 3,
         category: "The Chemistry",
-        question: "When do you feel most comfortable being physically affectionate?"
+        question: "What helps you recognise whether physical affection is welcome?"
     },
     {
         id: 40,
@@ -249,7 +271,7 @@ const CARDS = [
         id: 41,
         level: 3,
         category: "The Chemistry",
-        question: "What makes flirting genuinely fun for you?"
+        question: "What kind of playful teasing feels flirtatious rather than annoying to you?"
     },
     {
         id: 42,
@@ -261,13 +283,13 @@ const CARDS = [
         id: 43,
         level: 3,
         category: "The Chemistry",
-        question: "What's a small gesture that can make you feel deeply appreciated?"
+        question: "What makes you feel genuinely chosen rather than simply liked?"
     },
     {
         id: 44,
         level: 3,
         category: "The Chemistry",
-        question: "What's something that helps you feel comfortable expressing your desires?"
+        question: "What's something about desire that you've become more comfortable acknowledging?"
     },
     {
         id: 45,
@@ -285,13 +307,13 @@ const CARDS = [
         id: 47,
         level: 3,
         category: "The Chemistry",
-        question: "What's something romantic you enjoy but would rarely admit out loud?"
+        question: "What's a romantic cliché that actually works on you?"
     },
     {
         id: 48,
         level: 3,
         category: "The Chemistry",
-        question: "How do you usually behave when you're beginning to develop feelings for someone?"
+        question: "What's the first sign that a crush is turning into something more serious for you?"
     },
     {
         id: 49,
@@ -303,13 +325,13 @@ const CARDS = [
         id: 50,
         level: 3,
         category: "The Chemistry",
-        question: "What's a boundary you've become better at communicating?"
+        question: "What's a limit you didn't know you needed until you experienced it?"
     },
     {
         id: 51,
         level: 3,
         category: "The Chemistry",
-        question: "What's a form of affection you think is underrated?"
+        question: "When does silence with someone feel intimate rather than awkward?"
     },
     {
         id: 52,
@@ -321,21 +343,25 @@ const CARDS = [
         id: 53,
         level: 3,
         category: "The Chemistry",
-        question: "What's something you'd like a person you're dating to understand about how you communicate?"
+        question: "When you need reassurance in dating, what does it sound or look like?"
     },
     {
         id: 54,
         level: 3,
         category: "The Chemistry",
-        question: "What's one thing that can make physical chemistry even better over time?"
+        question: "How do you think physical attraction changes as two people get to know each other?"
     },
 
-    // LEVEL 4: BETWEEN US
+    // =====================================
+    // LEVEL 4 · BETWEEN US
+    // Cards 55–72
+    // =====================================
+
     {
         id: 55,
         level: 4,
         category: "Between Us",
-        question: "What's something about me that surprised you after getting to know me?"
+        question: "What's something you've felt comfortable telling me that you don't usually share with people?"
     },
     {
         id: 56,
@@ -347,7 +373,7 @@ const CARDS = [
         id: 57,
         level: 4,
         category: "Between Us",
-        question: "What's a question you've wanted to ask me but haven't found the right moment for?"
+        question: "What's a story from my life you'd like to hear the full version of?"
     },
     {
         id: 58,
@@ -365,13 +391,13 @@ const CARDS = [
         id: 60,
         level: 4,
         category: "Between Us",
-        question: "What's a small detail about me you've noticed that I might not realise?"
+        question: "What's a habit or expression of mine that you've started to recognise?"
     },
     {
         id: 61,
         level: 4,
         category: "Between Us",
-        question: "What's something you'd enjoy discovering about me over time?"
+        question: "What do you think we could teach each other?"
     },
     {
         id: 62,
@@ -383,7 +409,7 @@ const CARDS = [
         id: 63,
         level: 4,
         category: "Between Us",
-        question: "What's a moment we've shared that you remember particularly clearly?"
+        question: "What's a moment between us that felt different from the others, and why?"
     },
     {
         id: 64,
@@ -395,13 +421,13 @@ const CARDS = [
         id: 65,
         level: 4,
         category: "Between Us",
-        question: "What kind of activity do you think would bring out a completely different side of us?"
+        question: "What would be the most entertaining challenge for us to tackle as a team?"
     },
     {
         id: 66,
         level: 4,
         category: "Between Us",
-        question: "What's something you've learned about yourself through our conversations?"
+        question: "Has talking with me ever made you reconsider an opinion? Which one?"
     },
     {
         id: 67,
@@ -413,30 +439,144 @@ const CARDS = [
         id: 68,
         level: 4,
         category: "Between Us",
-        question: "What's a situation in which you'd be curious to see how we interact?"
+        question: "Is there a moment when you've felt a spark between us that you haven't mentioned before?"
     },
     {
         id: 69,
         level: 4,
         category: "Between Us",
-        question: "What's something you'd like us to try together just for fun?"
+        question: "What's a small tradition you could imagine us inventing?"
     },
     {
         id: 70,
         level: 4,
         category: "Between Us",
-        question: "What's a side of your personality you don't think I've seen yet?"
+        question: "What's a side of yourself you haven't had much chance to show me?"
     },
     {
         id: 71,
         level: 4,
         category: "Between Us",
-        question: "What's something you'd like to understand better about the way I see the world?"
+        question: "What's a subject on which you suspect we'd have a fascinating disagreement?"
     },
     {
         id: 72,
         level: 4,
         category: "Between Us",
-        question: "If we played this game again in six months, what do you think we'd laugh about?"
+        question: "What's one thing about our dynamic you hope never changes?"
+    },
+
+    // =====================================
+    // LEVEL 5 · AFTER DARK
+    // Cards 73–90
+    // =====================================
+
+    {
+        id: 73,
+        level: 5,
+        category: "After Dark",
+        question: "What's a sexual fantasy you've kept to yourself because you're unsure how someone would react?"
+    },
+    {
+        id: 74,
+        level: 5,
+        category: "After Dark",
+        question: "Is there a kink you're curious about but haven't fully explored?"
+    },
+    {
+        id: 75,
+        level: 5,
+        category: "After Dark",
+        question: "What is it about giving up control, or having it, that you find appealing?"
+    },
+    {
+        id: 76,
+        level: 5,
+        category: "After Dark",
+        question: "What's something you've wanted to ask for in bed but held back from saying?"
+    },
+    {
+        id: 77,
+        level: 5,
+        category: "After Dark",
+        question: "Have you ever discovered an unexpected turn-on that completely surprised you?"
+    },
+    {
+        id: 78,
+        level: 5,
+        category: "After Dark",
+        question: "What's the difference between feeling sexually desired and feeling sexually understood?"
+    },
+    {
+        id: 79,
+        level: 5,
+        category: "After Dark",
+        question: "Is there a sexual taboo that fascinates you, even if you'd never want to act on it?"
+    },
+    {
+        id: 80,
+        level: 5,
+        category: "After Dark",
+        question: "What's a role or persona you'd be curious to explore in a consensual role-play?"
+    },
+    {
+        id: 81,
+        level: 5,
+        category: "After Dark",
+        question: "Have you ever felt ashamed of something you wanted sexually? Where do you think that shame came from?"
+    },
+    {
+        id: 82,
+        level: 5,
+        category: "After Dark",
+        question: "What's something about your sexuality that has changed as you've become more experienced?"
+    },
+    {
+        id: 83,
+        level: 5,
+        category: "After Dark",
+        question: "What makes a sexual experience feel adventurous rather than simply unfamiliar?"
+    },
+    {
+        id: 84,
+        level: 5,
+        category: "After Dark",
+        question: "What makes you feel most vulnerable during sex, and is that vulnerability exciting, frightening, or both?"
+    },
+    {
+        id: 85,
+        level: 5,
+        category: "After Dark",
+        question: "What's a sexual experience that challenged an assumption you had about yourself?"
+    },
+    {
+        id: 86,
+        level: 5,
+        category: "After Dark",
+        question: "What would you need to feel safe enough to explore something completely outside your comfort zone?"
+    },
+    {
+        id: 87,
+        level: 5,
+        category: "After Dark",
+        question: "What's something you've imagined doing with me sexually but haven't told me about yet?"
+    },
+    {
+        id: 88,
+        level: 5,
+        category: "After Dark",
+        question: "What's a sexual boundary you feel strongly about, even if other people might not understand it?"
+    },
+    {
+        id: 89,
+        level: 5,
+        category: "After Dark",
+        question: "What kind of aftercare makes you feel most connected after an intense sexual experience?"
+    },
+    {
+        id: 90,
+        level: 5,
+        category: "After Dark",
+        question: "If you could tell me one thing about your sexual imagination without fear of judgment, what would it be?"
     }
 ];
